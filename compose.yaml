@@ -1,7 +1,7 @@
 
 services:
   deployment-test:
-    image: ghcr.io/mattgayheart/deployment-test:713d562bea1cc61eb675d0213f845bfe2894f088
+    image: ghcr.io/mattgayheart/deployment-test:0800e2c52c6d0965ac626746f026fcbcf06e9f55
     restart: unless-stopped
 
     networks:
