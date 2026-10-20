@@ -1,0 +1,12 @@
+
+services:
+  deployment-test:
+    image: ghcr.io/mattgayheart/deployment-test:latest
+    restart: unless-stopped
+
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
