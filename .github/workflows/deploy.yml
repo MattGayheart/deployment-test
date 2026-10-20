@@ -41,10 +41,11 @@ jobs:
             ${{ env.IMAGE }}:latest
             ${{ env.IMAGE }}:${{ github.sha }}
 
+      
       - name: Update deployment image
         run: |
-          sed -i \
-            "s|image: ghcr.io/mattgayheart/deployment-test:.*|image: ${IMAGE}:${GITHUB_SHA}|" \
+          sed -i -E \
+            "s|(^[[:space:]]*image:[[:space:]]*)${IMAGE}:[^[:space:]]+|\1${IMAGE}:${GITHUB_SHA}|" \
             compose.yaml
 
           git config user.name "github-actions[bot]"
